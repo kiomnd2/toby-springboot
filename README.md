@@ -61,3 +61,21 @@ HelloController 가 기능을 의존해서 사용하는 인터페이스 HelloSer
 ![img.png](img.png)
 
 SimpleHelloService 도 빈으로 등록을 하면 스프링 컨테이너에 의해 자동으로 Hello Controller 에 주입해서 사용 됨
+
+
+### dispatcher Servlet 적용
+```
+GenericWebApplicationContext applicationContext = new GenericWebApplicationContext() {
+    @Override
+    protected void onRefresh() {
+        super.onRefresh();
+        ServletWebServerFactory serverFactory = new TomcatServletWebServerFactory();
+        WebServer webServer = serverFactory.getWebServer(servletContext -> {
+        servletContext.addServlet("dispatcherServlet",
+        new DispatcherServlet(this)
+        ).addMapping("/*");
+    });
+webServer.start();
+}};
+```
+스프링 컨테이너 초기화 작업 중 호출되는 훅 메소드에 서블릿 컨테이너를 초기화하고 띄우는 코드 추가
