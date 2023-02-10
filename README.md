@@ -79,3 +79,24 @@ webServer.start();
 }};
 ```
 스프링 컨테이너 초기화 작업 중 호출되는 훅 메소드에 서블릿 컨테이너를 초기화하고 띄우는 코드 추가
+
+### Bean 과 Configuration, AnnotationConfigWebApplicationContext
+@Configuration 을 이용해 설정정보로 세팅,
+@Bean을 이용해 구성정보 만듦, 
+자바 코드를 이용한 구성 정보를 사용하려면 AnnotationConfigWebApplicationContext 클래스로 컨테이너 생성
+
+```
+@Configuration
+public class HellobootApplication {
+@Bean
+public HelloController helloController(HelloService helloService) {
+    return new HelloController(helloService);
+}
+@Bean
+public HelloService helloService() {
+    return new SimpleHelloService();
+}
+```
+
+### Component Scan
+애플리케이션 Main 클래스에 ComponentScan, 등록 대상이 될 클래스에는 Component 
