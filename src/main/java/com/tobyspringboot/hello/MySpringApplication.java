@@ -1,4 +1,4 @@
-package com.tobyspringboot;
+package com.tobyspringboot.hello;
 
 import org.springframework.beans.BeansException;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
