@@ -2,7 +2,6 @@ package com.tobyspringboot.config.autoconfig;
 
 import com.tobyspringboot.config.MyAutoConfiguration;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.DispatcherServlet;
 
 @MyAutoConfiguration

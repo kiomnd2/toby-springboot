@@ -14,14 +14,15 @@ public class ConfigurationTest {
 //        Assertions.assertThat(new Common()).isSameAs(new Common()); // 당연히 실패
 //
 //        MyConfig myConfig = new MyConfig();
+//
 //        Bean1 bean1 = myConfig.bean1();
 //        Bean2 bean2 = myConfig.bean2();
 //
-//        Assertions.assertThat(bean1.common).isSameAs(bean2.common); // 당연히 다른 값이 나옴 실패
+//        Assertions.assertThat(bean1.common).isNotEqualTo(bean2.common); // 당연히 다른 값이 나옴 실패
 //
 
         // 기본적으로 proxyBeanMethods 가 true 인 경우
-        //
+//        //
         AnnotationConfigWebApplicationContext ac = new AnnotationConfigWebApplicationContext();
         ac.register(MyConfig.class );
         ac.refresh();
@@ -71,7 +72,7 @@ public class ConfigurationTest {
         }
 
         @Bean
-        Bean2 bean2(){
+        Bean2 bean2() {
             return new Bean2(common());
         }
     }

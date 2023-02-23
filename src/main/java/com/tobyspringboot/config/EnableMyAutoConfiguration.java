@@ -1,7 +1,5 @@
 package com.tobyspringboot.config;
 
-import com.tobyspringboot.config.autoconfig.DispatcherServletConfig;
-import com.tobyspringboot.config.autoconfig.TomcatWebServerConfig;
 import org.springframework.context.annotation.Import;
 
 import java.lang.annotation.ElementType;
