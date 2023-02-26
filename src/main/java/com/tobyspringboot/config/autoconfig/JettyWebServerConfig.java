@@ -19,7 +19,10 @@ public class JettyWebServerConfig {
 
     @Bean("jettyWebServerFactory")
     @ConditionalOnMissingBean
-    public ServletWebServerFactory servletWebServerFactory() {
-        return new JettyServletWebServerFactory();
+    public ServletWebServerFactory servletWebServerFactory(ServerProperties properties) {
+        JettyServletWebServerFactory factory = new JettyServletWebServerFactory();
+        factory.setContextPath(properties.getContextPath());
+        factory.setPort(properties.getPort());
+        return factory;
     }
 }
