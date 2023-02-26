@@ -1,3 +1,6 @@
 com.tobyspringboot.config.autoconfig.DispatcherServletConfig
 com.tobyspringboot.config.autoconfig.TomcatWebServerConfig
 com.tobyspringboot.config.autoconfig.JettyWebServerConfig
+com.tobyspringboot.config.autoconfig.PropertyPlaceholderConfig
+com.tobyspringboot.config.autoconfig.PropertyPostProcessorConfig
+

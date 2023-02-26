@@ -20,7 +20,7 @@ public class TestRest {
     void hello() {
         TestRestTemplate restTemplate = new TestRestTemplate();
 
-        ResponseEntity<String> res = restTemplate.getForEntity("http://localhost:8080/hello?name={name}", String.class, "Spring");
+        ResponseEntity<String> res = restTemplate.getForEntity("http://localhost:9090/hello?name={name}", String.class, "Spring");
 
         assertThat(res.getStatusCode()).isEqualTo(HttpStatus.OK);
         assertThat(Objects.requireNonNull(res.getHeaders().getFirst(HttpHeaders.CONTENT_TYPE))
