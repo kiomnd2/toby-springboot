@@ -14,7 +14,7 @@ public class JdbcTemplateTest {
 
     @BeforeEach
     void init() {
-        jdbcTemplate.execute("CREATE TABLE IF NOT EXISTS HELLO(nmae varchar(50) primary key, count int)");
+        jdbcTemplate.execute("CREATE TABLE IF NOT EXISTS HELLO(name varchar(50) primary key, count int)");
 
     }
 
